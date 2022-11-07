@@ -128,6 +128,17 @@ public class ClientConsole implements ChatIF
     {
       host = "localhost";
     }
+    
+
+    int port = 0;
+    try
+    {
+      port = Integer.parseInt(args[1]);
+    }
+    catch(ArrayIndexOutOfBoundsException e)
+    {
+      port = DEFAULT_PORT;
+    }
     ClientConsole chat= new ClientConsole(host, DEFAULT_PORT);
     chat.accept();  //Wait for console data
   }
